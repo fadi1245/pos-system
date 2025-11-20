@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+
+# Env
+*.env
+
+# Vite
+dist/
+
+# Editor
+.vscode/
