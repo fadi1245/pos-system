@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import { log } from 'console'
 import connectDB from './config/db'
+import { errorHandler } from './midldeware/ErrorHandlingMiddleware'
 
 dotenv.config()
 connectDB()
@@ -10,6 +11,7 @@ connectDB()
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(errorHandler);
 
 app.get('/',(req,res)=>{
     res.send("backend running")
