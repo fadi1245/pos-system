@@ -33,20 +33,22 @@ function Login() {
 
   return (
     <div className='flex justify-center items-center'>
-        <div className='bg-red-500 min-h-screen w-full'>
-            <div className='bg-blue-600 max-w-[600px]'>
-                <h1>Login</h1>
-                <div>
+      <div className='bg-gray-100 min-h-screen w-full flex justify-center items-center'>
+            <div className='bg-white shadow-lg rounded-xl max-w-[400px] w-full px-10 py-10'>
+                    <h1 className='text-5xl text-center mb-3'>Login</h1>
+                <div className='flex justify-center items-center'>
                     <form action="POST" onSubmit={handleSubmit}>
                         <div>
-                            <input type="text" placeholder='Username' value={formData.username} onChange={handleChange}/>
+                            <input name='username' type="text" className='bg-gray-200 w-full my-2 py-3 px-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500' placeholder='Username' value={formData.username} onChange={handleChange}/>
                         </div>
                         <div>
-                            <input type="password" placeholder='password' value={formData.password} onChange={handleChange}/>
+                            <input name='password' type="password"  className='bg-gray-200 w-full my-1 py-3 px-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'  placeholder='password' value={formData.password} onChange={handleChange}/>
                         </div>
-                        <div>
-                            <button type='submit'>Login</button>
-                        </div>
+                        <div className='flex - justify-center'>
+                        <button type='submit' className='bg-indigo-600 text-white font-semibold py-3 px-6 mt-6 rounded-lg hover:bg-indigo-700 transition'>
+                            Login
+                            </button>
+                         </div>
                     </form>
                 </div>
                 <a href=""></a>
