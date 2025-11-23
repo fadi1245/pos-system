@@ -12,3 +12,5 @@ export const errorHandler =(
         stack: err.stack,
     })
 }
+
+export default errorHandler
