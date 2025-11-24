@@ -2,6 +2,8 @@ import { NextFunction, Request, Response } from "express";
 import asyncErrorHandler from "../midldeware/asyncErrorHandler";
 import { createProduct, deleteProductById, getAllproducts, getProductById, updateProductById } from "../services/product.services";
 import { customError } from "../utils/cutomError";
+import { cursorPaginate } from "../utils/cursorPagination";
+import Product from "../schemas/product.schema";
 
 const createProductController = asyncErrorHandler(
     async (req:Request, res:Response)=>{
@@ -14,17 +16,25 @@ const createProductController = asyncErrorHandler(
     }
 )
 
-const getProductsController =asyncErrorHandler(
-    async(req:Request, res:Response)=>{
-        const products = await getAllproducts()
-
-        res.status(200).json({
-            status: "success",
-            data: products
-        })
+const getProductsController = asyncErrorHandler(
+    async (req: Request, res: Response) => {
+      const limit = Number(req.query.limit) || 10;
+      const cursor = req.query.cursor as string | undefined;
+  
+      const { items, nextCursor } = await cursorPaginate(
+        Product as any,
+        limit,
+        cursor
+      );
+  
+      res.status(200).json({
+        status: "success",
+        data: items,
+        nextCursor,
+      });
     }
-)
-
+  );
+  
 const getProductController = asyncErrorHandler(
     async(req:Request,res:Response, next: NextFunction)=>{
         const {id} = req.params;
