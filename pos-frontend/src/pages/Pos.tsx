@@ -1,8 +1,8 @@
+import React from "react";
+import DashboardLayout from "../components/DashboardLayout";
 function Pos() {
     return (
-      <div className="p-5 text-2xl font-bold">
-        POS Dashboard
-      </div>
+        <DashboardLayout/>
     );
   }
   
