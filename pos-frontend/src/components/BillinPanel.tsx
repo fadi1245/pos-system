@@ -7,13 +7,10 @@ function BillinPanel() {
   </div>
     <div className='h-screen p-5 '>
         
-        {/* invoiceNumber userid and date div */}
         <div className="flex justify-between items-start mb-4">
 
-{/* LEFT GROUP: Invoice No + User */}
 <div className="flex gap-4">
 
-  {/* Invoice No */}
   <div className="relative w-40">
   <label 
     className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600"
@@ -29,7 +26,6 @@ function BillinPanel() {
   />
 </div>
 
-  {/* User */}
   <div className="relative w-40">
   <label className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600">
     User
@@ -44,7 +40,6 @@ function BillinPanel() {
 
 </div>
 
-{/* RIGHT GROUP: Date */}
 <div className="flex flex-col">
   <input
     type="date"
@@ -53,7 +48,6 @@ function BillinPanel() {
 </div>
 
 </div>
-      {/* custome name and payent method div */}
       <div className='flex gap-2 mb-4'>
         <input type="customerName" placeholder='customer neme' className='border rounded-lg px-3 pt-2 pb-2 w-full focus:outline-none focus:ring-1 focus:ring-blue-400' name="" id="" />
         <select name="" id="" className='border rounded-lg px-3 pt-4 pb-2 w-full focus:outline-none focus:ring-1 focus:ring-blue-400'>
@@ -61,13 +55,11 @@ function BillinPanel() {
             <option value="card">Card</option>
         </select>
       </div>
-      {/* phone div */}
       <div className='w-full'>
         <input type="text" className='border rounded-lg px-3 pt-2 pb-2 w-full focus:outline-none focus:ring-1 focus:ring-blue-400' name="phone" placeholder='Phone' id="" />
       </div>
       <div className="flex gap-4 my-3">
 
-{/* Barcode */}
 <div className="relative w-full">
   <label className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600">
     Barcode
@@ -78,7 +70,6 @@ function BillinPanel() {
   />
 </div>
 
-{/* Item */}
 <div className="relative w-full">
   <label className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600">
     Item
@@ -91,10 +82,8 @@ function BillinPanel() {
 
 </div>
 
-      {/* product listing div */}
       <div className="border rounded-lg bg-white shadow-sm max-w-[620px] h-[250px] overflow-auto no-scrollbar">
 
-      {/* Header */}
       <div className="grid grid-cols-6 bg-linear-to-r from-blue-700 to-blue-600 text-white font-semibold text-sm py-2 px-3 sticky top-0 z-10">
         <div>#</div>
         <div>ITEM NAME</div>
@@ -104,21 +93,16 @@ function BillinPanel() {
         <div className="text-right">AMOUNT</div>
       </div>
 
-      {/* Rows - Example static data */}
       <div className="divide-y">
 
-        {/* Row */}
         <div className="grid grid-cols-6 items-center py-2 px-3">
 
-          {/* Checkbox */}
           <div>
             <input type="checkbox" className="w-4 h-4" />
           </div>
 
-          {/* Item name */}
           <div className="font-medium">MARLBORO TOUCH</div>
 
-          {/* Quantity */}
           <div className="flex justify-center">
             <input
               type="number"
@@ -127,7 +111,6 @@ function BillinPanel() {
             />
           </div>
 
-          {/* Price */}
           <div className="flex justify-center">
             <input
               type="number"
@@ -136,7 +119,6 @@ function BillinPanel() {
             />
           </div>
 
-          {/* Unit Dropdown */}
           <div className="flex justify-center">
             <select className="border rounded-md px-2 py-1">
               <option>Box</option>
@@ -144,11 +126,9 @@ function BillinPanel() {
             </select>
           </div>
 
-          {/* Amount */}
           <div className="text-right font-semibold">19.500</div>
         </div>
 
-        {/* Row */}
         <div className="grid grid-cols-6 items-center py-2 px-3">
 
           <div>
@@ -183,7 +163,6 @@ function BillinPanel() {
           <div className="text-right font-semibold">23.500</div>
         </div>
 
-        {/* Row */}
         <div className="grid grid-cols-6 items-center py-2 px-3">
 
           <div>
@@ -220,34 +199,27 @@ function BillinPanel() {
 
       </div>
 
-      {/* Add Row link */}
       <div className="px-3 py-2">
         <button className="text-blue-600 font-medium text-sm hover:underline flex items-center gap-1">
           <span className="text-lg">+</span> Add Row
         </button>
-      </div>{/* Footer */}
+      </div>
             <div className="grid grid-cols-6 bg-linear-to-r from-blue-700 to-blue-600 text-white font-semibold text-sm py-2 px-3 mt-2">
 
-            {/* EMPTY for "#" */}
             <div></div>
 
-            {/* TOTAL QTY LABEL */}
             <div className="text-left">TOTAL QTY</div>
 
-            {/* TOTAL QTY VALUE */}
             <div className="text-center text-white">6</div>
 
-            {/* TOTAL AMOUNT LABEL */}
             <div className="text-right col-span-2">TOTAL AMOUNT</div>
 
-            {/* TOTAL AMOUNT VALUE */}
             <div className="text-right font-bold">141.000</div>
 
             </div>
     </div>
     <div className="flex gap-4 my-3">
 
-{/* Total Tax */}
 <div className="relative w-full mt-2">
   <label className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600">
     Total Tax
@@ -258,7 +230,6 @@ function BillinPanel() {
   />
 </div>
 
-{/* Total Taxable */}
 <div className="relative w-full">
   <label className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600">
     Total Taxable
@@ -270,10 +241,8 @@ function BillinPanel() {
 </div>
 
 </div>
-    {/* total discount and adjustment div */}
     <div className="flex gap-4 my-3">
 
-{/* Total Discount */}
 <div className="relative w-full">
   <label className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600">
     Total Discount
@@ -284,7 +253,6 @@ function BillinPanel() {
   />
 </div>
 
-{/* Adjustments */}
 <div className="relative w-full">
   <label className="absolute -top-2 left-3 bg-white text-[11px] px-1 text-gray-600">
     Adjustments

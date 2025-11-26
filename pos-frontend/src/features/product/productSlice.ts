@@ -21,9 +21,17 @@ const initialState: ProductState = {
 
 export const fetchProducts = createAsyncThunk(
   "product/fetchProducts",
-  async ({ limit = 12, cursor, category, q }: { limit?: number; cursor?: string; category?: string; q?: string }) => {
+  async (
+    {
+      limit = 12,
+      cursor,
+      category,
+      q,
+      append = false,
+    }: { limit?: number; cursor?: string; category?: string; q?: string; append?: boolean }
+  ) => {
     const res = await ProductApi.list(limit, cursor, category, q);
-    return res;
+    return { ...res, append };
   }
 );
 
@@ -75,9 +83,16 @@ const productSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (s, action) => {
         s.loading = false;
-        s.items = [...(s.items ?? []), ...action.payload.items];
+      
+        if (action.payload.append) {
+          s.items = [...s.items, ...action.payload.items]; 
+        } else {
+          s.items = action.payload.items; 
+        }
+      
         s.nextCursor = action.payload.nextCursor ?? null;
       })
+      
       .addCase(fetchProducts.rejected, (s, action) => {
         s.loading = false;
         s.error = action.error.message ?? "Failed to load";

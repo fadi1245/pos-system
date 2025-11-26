@@ -17,7 +17,6 @@ function ActionPanel() {
   return (
     <div className='px-4 py-3 space-y-4'>
 
-      {/* ROW 1 */}
       <div className='grid grid-cols-7 gap-3'>
 
         <div className='border w-full py-3 bg-amber-100 rounded-md shadow-sm'>
@@ -57,15 +56,9 @@ function ActionPanel() {
                 SAVE & PRINT
             </div>
             </div>
-
-
-
-        {/* Empty for alignment spacing */}
         <div></div>
-
       </div>
 
-      {/* ROW 2 */}
       <div className='grid grid-cols-7 gap-3'>
 
         <div className='border w-full py-3 bg-amber-100 rounded-md shadow-sm'>
@@ -110,7 +103,6 @@ function ActionPanel() {
 
       </div>
 
-      {/* ROW 3 */}
       <div className='grid grid-cols-7 gap-3'>
 
         <div className='border w-full py-3 bg-blue-100 rounded-md shadow-sm'>
